@@ -14,6 +14,7 @@ pipeline {
           stage("Code coverage") {
             steps {
                 sh "./gradlew jacocoTestReport"
+                sh 'tree'
                 publishHTML (target: [
                     reportDir: 'build/reports/jacoco/test/html',
                     reportFiles: 'index.html',
